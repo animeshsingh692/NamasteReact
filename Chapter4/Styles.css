@@ -1,0 +1,12 @@
+.parent {
+  border: 2px solid;
+}
+.child1 {
+  background-color: orange;
+}
+.child2 {
+  background-color: aquamarine;
+}
+.sibling {
+  color: brown;
+}
