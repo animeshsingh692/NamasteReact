@@ -1,0 +1,10 @@
+* What is CDN?
+    A content delivery network (CDN) is a network of interconnected servers that speeds up webpage loading for data-heavy applications. 
+    
+* Why use CDN?
+    better performance, increased reliability, cost savings, and resilience against cyber attacks.
+
+* Why is React called "React?
+    React is called "React" because of its core feature, which is its ability to "react" or respond dynamically to changes in data.
+
+*

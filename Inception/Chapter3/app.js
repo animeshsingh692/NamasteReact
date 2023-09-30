@@ -1,6 +1,6 @@
 const element = React.createElement(
     'h1',
-    { class: 'heading1' },
+    { className: 'heading1' },
     'This is third chapter in aqua blue'
 );
 

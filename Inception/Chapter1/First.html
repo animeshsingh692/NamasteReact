@@ -6,14 +6,21 @@
     <title>First Document</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <h2>I'm already present, can you replace me?</h2>
+    </div>
 
     <script>
       const heading = document.createElement("h1");
       heading.innerHTML = "My First Document";
 
+      const newHeading = document.createElement("h1");
+      newHeading.innerHTML = "I'll replace everyone";
+
       const root = document.querySelector("#root");
       root.appendChild(heading);
+      root.replaceChild(newHeading);
+      root.replaceChildren(newHeading);
     </script>
   </body>
 </html>
