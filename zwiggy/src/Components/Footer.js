@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { UserContext } from "./UserContext";
+import { useUserContext } from "./UserContext";
 
 const Footer = () => {
-    const { loginName } = useContext(UserContext)
+    const { name } = useUserContext()
     return (
         <div className="footer-content">
             <h5>
-                {loginName ? `Hello ${loginName}` : `Default User`}
+                {name ? `Hello ${name}` : `Default User`}
             </h5>
         </div>
 

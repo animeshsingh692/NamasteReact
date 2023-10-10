@@ -1,20 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect, Children } from "react";
 import { withPromotedLabel } from "./Restaurant"
+import useFetch from "./useFetch";
 const Restaurant = () => {
-
-    const [resData, setResData] = useState([]);
     const PromotedRestaurant = withPromotedLabel(RestaurantCard);
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    const fetchData = async () => {
-        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.971599&lng=77.594566')
-        const jsonData = await data.json();
-        setResData(jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    }
+    const resData = useFetch();
     return (
         <div className="restaurant">
             <div className="res-card-container">
@@ -33,7 +23,7 @@ const Restaurant = () => {
 export const withPromotedLabel = (Children) => {
     return (props) => {
         return (
-            <div style={{ display: "flex", flexDirection: "column", width: "15%" }}>
+            <div >
                 <label
                     style={{ padding: '4px', background: "#000", color: "#fff", opacity: '0.5' }}
                 >Promoted</label>
