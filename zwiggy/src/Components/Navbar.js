@@ -1,9 +1,10 @@
 import { useUserAuth, useUserContext } from './UserContext';
+import { useOnlineStatus } from '../Hooks/useOnlineStatus';
 import './index.css';
 const Navbar = () => {
-
     const { name } = useUserContext();
-    const { isAuthorized, handleLoginLogout } = useUserAuth()
+    const { isAuthorized, handleLoginLogout } = useUserAuth();
+    const internetStatus = useOnlineStatus();
     return (
         <div className="navbar">
             <div className="nav-items">
@@ -22,6 +23,7 @@ const Navbar = () => {
                     <button onClick={() => handleLoginLogout()}>
                         {isAuthorized ? `Logout ${name}` : `Login`}
                     </button>
+                    <span>{internetStatus ? "✅" : "🔴"}</span>
                 </div>
             </div>
 

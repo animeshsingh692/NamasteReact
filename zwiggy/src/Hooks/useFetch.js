@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-const useFetch = () => {
+export const useFetch = () => {
     const [resData, setResData] = useState([]);
 
     useEffect(() => {
@@ -14,5 +14,3 @@ const useFetch = () => {
 
     return resData;
 }
-
-export default useFetch;

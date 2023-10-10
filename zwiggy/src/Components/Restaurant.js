@@ -1,10 +1,20 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect, Children } from "react";
 import { withPromotedLabel } from "./Restaurant"
-import useFetch from "./useFetch";
+import { useFetch } from "../Hooks/useFetch";
+import { useOnlineStatus } from "../Hooks/useOnlineStatus";
 const Restaurant = () => {
     const PromotedRestaurant = withPromotedLabel(RestaurantCard);
     const resData = useFetch();
+
+    const internetStatus = useOnlineStatus();
+    if (internetStatus === false) {
+        return (
+            <div>
+                <h2>Look's like you're offline.</h2>
+                <p>Please checkyour internet connection</p>
+            </div>
+        )
+    }
     return (
         <div className="restaurant">
             <div className="res-card-container">
