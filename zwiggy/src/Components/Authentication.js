@@ -7,9 +7,6 @@ const Authentication = () => {
     console.log(">>>>>>>>>", isAuthorized);
     const { setName } = useUserContext();
 
-    // const [userName, setUserName] = useState('');
-    // const [password, setPassword] = useState('');
-
     const handleAuth = (e) => {
         e.preventDefault();
         let name = e.target.username.value;
