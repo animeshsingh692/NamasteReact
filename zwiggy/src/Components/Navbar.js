@@ -1,5 +1,6 @@
 import { useUserAuth, useUserContext } from './UserContext';
 import { useOnlineStatus } from '../Hooks/useOnlineStatus';
+import { Link } from 'react-router-dom';
 import './index.css';
 const Navbar = () => {
     const { name } = useUserContext();
@@ -16,6 +17,11 @@ const Navbar = () => {
                     <input type="text" name="searchTxt" id="" />
                     <button>Search</button>
                     <button>Top Rated Restaurants</button>
+                </div>
+                <div className="about-us-container">
+                    <Link to='/about'>
+                        <span>About</span>
+                    </Link>
                 </div>
                 <div className="last">
                     <button>Help</button>
